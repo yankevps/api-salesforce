@@ -1,0 +1,37 @@
+{
+  "rabbit_version": "3.6.6",
+  "users": [
+    {
+      "name": "admin",
+      "password_hash": "y4xPTRVfzXg68sz9ALqeQzARam3CwnGo53xS752cDV5+Utzh",
+      "tags": "administrator"
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "admin",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "parameters": [],
+  "policies": [],
+  "queues": [
+    {
+      "name": "product-external",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    }
+  ],
+  "exchanges": [],
+  "bindings": []
+}

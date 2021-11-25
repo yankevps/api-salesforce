@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  rabbitmq:
+    image: "rabbitmq:3.8-management-alpine"
+    container_name: rabbitmq
+    hostname: rabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - "./conf/.rabbitmq_data:/var/lib/rabbitmq/mnesia"
+      - ./conf/rabbitmq_config/definitions.json:/etc/rabbitmq/definitions.json:ro
+
+  api:
+    container_name: api
+    image: node:12
+    working_dir: /usr/src/api
+    restart: always
+    volumes:
+      - ./dist:/usr/src/api/dist/
+      - ./package.json:/usr/src/api/package.json
+    command: bash -c "npm install && npm start"
+    ports:
+      - "3333:3333"
+    environment: 
+      - PORT=3333
+      - JWT_SECRET=#sadf@423
+      - JWT_EXPIRES_IN=1d
+      - AMQP_RABBITMQ=amqp://admin:1@rabbitmq
+    links: 
+      - rabbitmq
+    depends_on:
+      - rabbitmq
+
+volumes:
+  postgresql_data:

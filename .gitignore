@@ -1,0 +1,14 @@
+node_modules
+dist
+yarn-error.log
+.env
+.env.production
+.env.staging
+.env.test
+.idea/
+.vscode/
+tmp/
+temp/
+coverage
+.rabbitmq_data
+info.log

@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+.env.production
+.env.staging
+.env.test
+.rabbitmq_data
+info.log

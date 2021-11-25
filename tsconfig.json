@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "lib": [
+      "es5",
+      "es6"
+    ],
+    "target": "es2019",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "strictNullChecks": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+  }
+}
+
